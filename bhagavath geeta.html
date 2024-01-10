@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<p id="ptag"></p>
+<img src="" id="img" alt="non">
+<img src="" id="img1" alt="non">
+<img src="" id="img2" alt="non">
+<img src="" id="img3" alt="non">
+<img src="" id="img4" alt="non">
+<script>
+async function api(){
+const p = document.getElementById('ptag');
+const i = document.getElementById('img');
+const i1 = document.getElementById('img1');
+const i2 = document.getElementById('img2');
+const i3 = document.getElementById('img3');
+const i4 = document.getElementById('img4');
+const res= await fetch('https://pokeapi.co/api/v2/pokemon/ditto');
+const data= await res.json();
+p.textContent=data.name;
+i.src=data.sprites.back_default;
+console.log(data)
+}
+api()
+</script>
+</body>
+</html>
